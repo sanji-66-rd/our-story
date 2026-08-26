@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>I Mean... | A little story about us</title>
+  <meta name="description" content="A cinematic interactive love story about two people who met on Discord.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/chapters.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+  <div id="particles-container"></div>
+
+  <div id="custom-cursor" aria-hidden="true"></div>
+
+  <div id="progress-bar" role="progressbar" aria-label="Story progress">
+    <span id="progress-text"></span>
+  </div>
+
+  <button id="continue-btn" class="continue-btn" aria-label="Click to continue">
+    <span class="continue-btn-text">continue</span>
+    <span class="continue-btn-arrow">&darr;</span>
+  </button>
+
+  <div id="music-controls" class="music-controls hidden" role="region" aria-label="Music controls">
+    <button id="music-toggle" class="music-btn" aria-label="Pause music">
+      <svg id="music-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+      <svg id="music-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
+        <polygon points="5,3 19,12 5,21"></polygon>
+      </svg>
+    </button>
+    <input id="music-volume" type="range" min="0" max="100" value="30" class="volume-slider" aria-label="Volume">
+  </div>
+
+  <main id="story-container" role="main">
+    <section id="intro" class="scene active" aria-label="Introduction">
+      <div class="scene-content">
+        <div id="intro-lines"></div>
+      </div>
+    </section>
+
+    <section id="chapter-01" class="scene chapter" data-chapter="1" aria-label="Chapter 1: A Random Conversation">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 01</span>
+          <h2 class="chapter-title">A Random Conversation</h2>
+        </div>
+        <div class="chapter-body" id="ch01-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-02" class="scene chapter" data-chapter="2" aria-label="Chapter 2: The Nights">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 02</span>
+          <h2 class="chapter-title">The Nights</h2>
+        </div>
+        <div class="chapter-body" id="ch02-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-03" class="scene chapter" data-chapter="3" aria-label="Chapter 3: I Mean...">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 03</span>
+          <h2 class="chapter-title">I Mean...</h2>
+        </div>
+        <div class="chapter-body" id="ch03-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-04" class="scene chapter" data-chapter="4" aria-label="Chapter 4: What I Fell For">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 04</span>
+          <h2 class="chapter-title">What I Fell For</h2>
+        </div>
+        <div class="chapter-body" id="ch04-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-05" class="scene chapter" data-chapter="5" aria-label="Chapter 5: Two Months">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 05</span>
+          <h2 class="chapter-title">Two Months</h2>
+        </div>
+        <div class="chapter-body" id="ch05-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-06" class="scene chapter" data-chapter="6" aria-label="Chapter 6: Distance">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 06</span>
+          <h2 class="chapter-title">Distance</h2>
+        </div>
+        <div class="chapter-body" id="ch06-body"></div>
+      </div>
+    </section>
+
+    <section id="chapter-07" class="scene chapter" data-chapter="7" aria-label="Chapter 7: Someday">
+      <div class="scene-content">
+        <div class="chapter-header">
+          <span class="chapter-number">Chapter 07</span>
+          <h2 class="chapter-title">Someday</h2>
+        </div>
+        <div class="chapter-body" id="ch07-body"></div>
+      </div>
+    </section>
+
+    <section id="final-message" class="scene" aria-label="Final message">
+      <div class="scene-content final-content" id="final-content"></div>
+    </section>
+  </main>
+
+  <script src="js/story.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
